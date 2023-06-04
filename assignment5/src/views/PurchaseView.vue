@@ -1,4 +1,4 @@
-<script setup lang="js">
+<script setup>
 import { ref } from "vue";
 import Modal from "../components/Modal.vue";
 import { useStore } from "../store/index.js";
@@ -16,7 +16,7 @@ const toggleModal = (id) => {
 </script>
 
 <template>
-  <div>
+  <div class ="container">
     <button @click="router.push('/cart')">Cart</button>
     <div v-if="store.movies" class="tiles">
       <div v-for="movie in store.movies" class="tile">
@@ -31,12 +31,17 @@ const toggleModal = (id) => {
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 .tiles {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
 
 img {
-  width: 200px;
+  width: 300px;
+}
+.container{
+  background-color: aquamarine;
+  font-family: 'comic neue', 'space mono', monospace;
 }
 </style>

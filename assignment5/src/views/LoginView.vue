@@ -12,7 +12,6 @@ const login = () => {
   } else {
     alert("Invalid username/password!")
   }
-  console.log(username.value, password.value);
 }
 </script>
 
@@ -25,9 +24,11 @@ const login = () => {
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 .login-container {
   width: 50%;
   display: flex;
   flex-direction: column;
+  font-family: 'comic neue', 'space mono', monospace;
 }
 </style>

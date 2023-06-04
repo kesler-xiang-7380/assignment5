@@ -2,14 +2,15 @@
 
 <template>
   <div class="footer-container">
-    <h4>My smelly foot!</h4>
+    <h4>647 333 4444 (call if you have any questions)</h4>
   </div>
 </template>
 
 <style scoped>
 .footer-container {
-  background-color: pink;
-  width: 75vw;
+  background-color: lime;
+  width: 100%;
   height: 25vh;
+  font-family: 'comic neue', 'space mono', monospace;
 }
 </style>

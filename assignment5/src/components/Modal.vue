@@ -1,5 +1,5 @@
 <script setup>
-import axios from "axios";
+import axios from 'axios';
 import { useStore } from "../store";
 
 const store = useStore();
@@ -8,7 +8,7 @@ const props = defineProps(["id"]);
 const movie = (
   await axios.get(`https://api.themoviedb.org/3/movie/${props.id}`, {
     params: {
-      api_key: import.meta.env.VITE_TMDB_API_KEY,
+      api_key: "f5fc46e0e9d2c42522efbf294b903f7b",
       region: "US",
       language: "en",
       include_adult: false,
@@ -18,22 +18,23 @@ const movie = (
 </script>
 
 <template>
-    <Teleport to="body">
-      <div class="modal-outer-container" @click.self="$emit('toggleModal')">
-        <div class="modal-inner-container">
-          <button @click="$emit('toggleModal')">X</button>
-          <div v-if="movie">
-            <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" />
-            <h1>{{ movie.title }}</h1>
-            <h2>{{ movie.release_date }}</h2>
-            <h3 @click="store.addToCart(movie.poster_path, movie.title)">Buy</h3>
-          </div>
+  <Teleport to="body">
+    <div class="modal-outer-container" @click.self="$emit('toggleModal')">
+      <div class="modal-inner-container">
+        <button @click="$emit('toggleModal')">X</button>
+        <div v-if="movie">
+          <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" />
+          <h1>{{ movie.title }}</h1>
+          <h2>{{ movie.release_date }}</h2>
+          <h3 @click="store.addToCart(movie.poster_path, movie.title)">Buy</h3>
         </div>
       </div>
-    </Teleport>
-  </template>
+    </div>
+  </Teleport>
+</template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 .modal-outer-container {
   position: fixed;
   top: 0;
@@ -49,7 +50,7 @@ const movie = (
 .modal-outer-container .modal-inner-container {
   background-color: #3b444b;
   width: clamp(280px, 100%, 900px);
-  height: 50vh;
+  height: 60vh;
   position: relative;
 }
 

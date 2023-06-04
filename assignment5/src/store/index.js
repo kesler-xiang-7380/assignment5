@@ -6,9 +6,9 @@ export const useStore = defineStore('store', {
     cart: [],
   }),
   actions: {
-    addToCart(poster, title) {
+    addToCart(poster_path, title) {
       this.cart.push({
-        poster,
+        poster_path,
         title,
       });
       console.log(this.cart);
